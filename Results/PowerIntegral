@@ -1,0 +1,22 @@
+def power_calc(phip,thetap,rp):
+    if isShell:
+        Ep, Hp = em.shellEMu(wl[analysis_index]*(1e9),N2[analysis_index],
+                             N1[analysis_index],N,rp,thetap,phip,a,b,mu1,mu2)
+    else:
+        Ep, Hp = em.sphereEMu(wl[analysis_index]*(1e9),N2[analysis_index],
+                              N,rp,thetap,phip,a,mu1)
+    return (npy.dot(Ep,npy.conj(Ep))).real*((rp)**2)*npy.sin(thetap)
+
+if isShell:
+    power_integ = tplquad(power_calc,
+                          a, b,
+                          lambda rp: 0, lambda rp: math.pi,
+                          lambda rp,thetap: 0, lambda rp,thetap: 2*math.pi)
+else:
+    power_integ = tplquad(power_calc,
+                          0, a,
+                          lambda rp: 0, lambda rp: math.pi,
+                          lambda rp,thetap: 0, lambda rp,thetap: 2*math.pi)
+
+Power = omega*eps0*((N2[analysis_index]**2).imag)*power_integ[0]/2
+print(Power)
