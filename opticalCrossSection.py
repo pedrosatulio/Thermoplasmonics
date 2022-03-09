@@ -1,17 +1,9 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
+# %%
 import math
 import numpy as npy
 from scipy import special as sp
 
-
-# In[2]:
-
-
+# %%
 def sphereCoeffs(wl,N2,N,mu1,a):
     wl /= 1e9
     a /= 1e9
@@ -52,10 +44,7 @@ def sphereCoeffs(wl,N2,N,mu1,a):
         d_n[v] = X[3]
     return a_n, b_n, c_n, d_n
 
-
-# In[3]:
-
-
+# %%
 def shellCoeffs(wl,N1,N2,N,mu1,mu2,a,b):
     wl /= 1e9
     a /= 1e9
@@ -172,10 +161,7 @@ def shellCoeffs(wl,N1,N2,N,mu1,mu2,a,b):
         w_n[v] = X[7]
     return a_n, b_n, c_n, d_n, f_n, g_n, v_n, w_n
 
-
-# In[4]:
-
-
+# %%
 def sphereCSu(wl,N2,N,mu1,a):
     # Parâmetros gerais
     a_n, b_n, c_n, d_n = sphereCoeffs(wl,N2,N,mu1,a)
@@ -198,10 +184,7 @@ def sphereCSu(wl,N2,N,mu1,a):
     Cabs = Cext - Csca    
     return Csca, Cext, Cabs, Cbck
 
-
-# In[5]:
-
-
+# %%
 def shellCSu(wl,N1,N2,N,mu1,mu2,a,b):
     # Parâmetros gerais
     a_n, b_n, c_n, d_n, f_n, g_n, v_n, w_n = shellCoeffs(wl,N1,N2,N,mu1,mu2,a,b)
@@ -228,10 +211,7 @@ def shellCSu(wl,N1,N2,N,mu1,mu2,a,b):
     Cabs = Cext - Csca    
     return Csca, Cext, Cabs, Cbck
 
-
-# In[6]:
-
-
+# %%
 def sphereCS(wl,N2,N,mu1,a):
     wl /= 1e9
     Csca = npy.empty(len(wl), dtype=npy.float)
@@ -246,10 +226,22 @@ def sphereCS(wl,N2,N,mu1,a):
         Cbck[index] = temp[3]*(1e18)
     return Csca, Cext, Cabs, Cbck
 
+# %%
+def chargedsphereCS(wl,N2,N,mu1,a):
+    wl /= 1e9
+    Csca = npy.empty(len(wl), dtype=npy.float)
+    Cext = npy.empty(len(wl), dtype=npy.float)
+    Cbck = npy.empty(len(wl), dtype=npy.float)
+    Cabs = npy.empty(len(wl), dtype=npy.float)
+    for index in range(0,len(wl)-1,1):
+        temp = sphereCSu(wl[index]*(1e9),N2[index],N,mu1,a)
+        Csca[index] = temp[0]*(1e18)
+        Cext[index] = temp[1]*(1e18)
+        Cabs[index] = temp[2]*(1e18)
+        Cbck[index] = temp[3]*(1e18)
+    return Csca, Cext, Cabs, Cbck
 
-# In[7]:
-
-
+# %%
 def shellCS(wl,N1,N2,N,mu1,mu2,a,b):
     wl /= 1e9
     Csca = npy.empty(len(wl), dtype=npy.float)
@@ -263,4 +255,5 @@ def shellCS(wl,N1,N2,N,mu1,mu2,a,b):
         Cabs[index] = temp[2]*(1e18)
         Cbck[index] = temp[3]*(1e18)
     return Csca, Cext, Cabs, Cbck
+
 
