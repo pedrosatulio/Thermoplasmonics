@@ -2,11 +2,11 @@
 
 _Thermoplasmonics_ is a library developed during the course of my graduate studies to aid theoretical investigations in the field of photothermal heating of plamosmonic nanoparticles and provide a framework to standarize image/plot formatting and perform data processing.
 
-The library relies on [Mie][1] and [Mie-Gans][2] theories to calculate the optical cross sections of NPs (mostly plasmonic) and translate the results to thermal simulation environments for further photothermal conversion analysis. [Figures of merit (FoM)][3] are extensively used for characterization, and collective temperature increase is also modeled.
+The library relies on [Mie][#1] and [Mie-Gans][#2] theories to calculate the optical cross sections of NPs (mostly plasmonic) and translate the results to thermal simulation environments for further photothermal conversion analysis. [Figures of merit (FoM)][#3] are extensively used for characterization, and collective temperature increase is also modeled.
 
-Furthermore, a collection of refractive indexes for different optical materials is included, and their permittivities are compensated following the [size dependent Drude model][4]. While the computation of nanospheres and nanoshells use Mie theory, nanorods are modeled as prolate [spheroids][5] with optical cross sections determined by [Rayleigh-Gans approximation][6] with polarizability correction using [Modified Long Wavelength Approximation (MLWA)][7].
+Furthermore, a collection of refractive indexes for different optical materials is included, and their permittivities are compensated following the [size dependent Drude model][#4]. While the computation of nanospheres and nanoshells use Mie theory, nanorods are modeled as prolate [spheroids][#5] with optical cross sections determined by [Rayleigh-Gans approximation][#6] with polarizability correction using [Modified Long Wavelength Approximation (MLWA)][#7].
 
-Moreover, the framework integrate optical calculations to a thermal module that uses the [Finite Difference Method (FDM)][8] to simulate [Direct Absorption Solar Collectors (DASCs)][9] and extract temperature increase, as well as the device's thermodynamic performance.
+Moreover, the framework integrate optical calculations to a thermal module that uses the [Finite Difference Method (FDM)][#8] to simulate [Direct Absorption Solar Collectors (DASCs)][#9] and extract temperature increase, as well as the device's thermodynamic performance.
 
 Next, a set of curated tutorials are catalogued to facilitate the use of this tool.
 
@@ -34,23 +34,24 @@ The library is incomplete in its current form. To further support thermoplasmoni
 - Add support for spheroidal nanoshells;
 - Model NP monodispersity: _include a distribution of NP sizes to mimic the spectral broadening seen in experimental data_;
 - Add support for direct import of external files of nanofluid spectrum for solar simulation;
-- Add [Discrete Dipole Approximation (DDA)][10] support for NPs of arbitrary shape;
-- Expand the FMD implementation to include the thermal simulation of single NP and [plasmonic metamolecules][11]:
+- Add [Discrete Dipole Approximation (DDA)][#10] support for NPs of arbitrary shape;
+- Expand the FMD implementation to include the thermal simulation of single NP and [plasmonic metamolecules][#11]:
     1. _Steady-state heat transfer_
     2. _Transient heat transfer_
     3. _Add support for different laser pulse regimes_
  - Add support for photoacoustics.
 
-## References
 
-[1]: https://en.wikipedia.org/wiki/Mie_scattering
-[2]: https://en.wikipedia.org/wiki/Gans_theory
-[3]: https://doi.org/10.3390/nano12234188
-[4]: https://doi.org/10.1038/s41598-020-63066-9
-[5]: https://en.wikipedia.org/wiki/Spheroid
-[6]: https://en.wikipedia.org/wiki/Rayleigh%E2%80%93Gans_approximation
-[7]: http://dx.doi.org/10.1021/nl060219x
-[8]: https://en.wikipedia.org/wiki/Finite_difference_method
-[9]: https://doi.org/10.1016/j.applthermaleng.2021.116799
-[10]: https://en.wikipedia.org/wiki/Discrete_dipole_approximation
-[11]: https://doi.org/10.1038/nmat4031
+<!--References-->
+
+[#1]: https://en.wikipedia.org/wiki/Mie_scattering
+[#2]: https://en.wikipedia.org/wiki/Gans_theory
+[#3]: https://doi.org/10.3390/nano12234188
+[#4]: https://doi.org/10.1038/s41598-020-63066-9
+[#5]: https://en.wikipedia.org/wiki/Spheroid
+[#6]: https://en.wikipedia.org/wiki/Rayleigh%E2%80%93Gans_approximation
+[#7]: http://dx.doi.org/10.1021/nl060219x
+[#8]: https://en.wikipedia.org/wiki/Finite_difference_method
+[#9]: https://doi.org/10.1016/j.applthermaleng.2021.116799
+[#10]: https://en.wikipedia.org/wiki/Discrete_dipole_approximation
+[#11]: https://doi.org/10.1038/nmat4031
