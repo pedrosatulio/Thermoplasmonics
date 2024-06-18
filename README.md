@@ -1,6 +1,6 @@
 # Thermoplasmonics (v1.1.0)
 
-_Thermoplasmonics_ is a library developed during the course of my graduate studies to aid theoretical investigations in the field of photothermal heating of plamosmonic nanoparticles and provide a framework to standarize image/plot formatting and perform data processing.
+_Thermoplasmonics_ is a library developed during the course of my graduate studies to aid theoretical investigations in the field of photothermal heating of plasmonic nanoparticles and provide a framework to standardize image/plot formatting and perform data processing.
 
 The library relies on [Mie][#1] and [Mie-Gans][#2] theories to calculate the optical cross sections of NPs (mostly plasmonic) and translate the results to thermal simulation environments for further photothermal conversion analysis. [Figures of merit (FoM)][#3] are extensively used for characterization, and collective temperature increase is also modeled.
 
@@ -8,7 +8,7 @@ Furthermore, a collection of refractive indexes for different optical materials 
 
 Moreover, the framework integrate optical calculations to a thermal module that uses the [Finite Difference Method (FDM)][#8] to simulate [Direct Absorption Solar Collectors (DASCs)][#9] and extract temperature increase, as well as the device's thermodynamic performance.
 
-Next, a set of curated tutorials are catalogued to facilitate the use of this tool.
+Next, a set of curated tutorials are cataloged to facilitate the use of this tool.
 
 ## Tutorials
 
@@ -19,7 +19,7 @@ Next, a set of curated tutorials are catalogued to facilitate the use of this to
 > Parametric sweep on gold nanospheres for increasing radius (from 5 to 100 nm) is illustrated. Absorption maximum for each size is stored and used to calculate size dependent FoM. The obtained results are plotted.
 
 ### [3. Parametric sweep #2: colormaps](Colormap.md)
-> Multidimensional parametric sweep is introduced exploring LSPR tunability of nanorods. Gold nanorod length and diameter are swept and absorption cross section extracted. Plasmon peak wavelength and FoM colormaps are ellaborated based length and diameter changes.
+> Multidimensional parametric sweep is introduced exploring LSPR tunability of nanorods. Gold nanorod length and diameter are swept and absorption cross section extracted. Plasmon peak wavelength and FoM colormaps are elaborated based length and diameter changes.
 
 ### [4. Collective heating in cuvette](Thermal.md)
 > Here, a generic solution to the macroscopic transient heating of gold colloid in a cuvette suffering from convective heat losses (_h_) is shown. Three gold nanosphere sizes are modeled (5, 50 and 100 nm) maintaining the same total mass of NPs among calculations. Temperature increase in the steady-state is then compared with FoM.
@@ -35,7 +35,7 @@ The library is incomplete in its current form. To further support thermoplasmoni
 - Model NP monodispersity: _include a distribution of NP sizes to mimic the spectral broadening seen in experimental data_;
 - Add support for direct import of external files of nanofluid spectrum for solar simulation;
 - Add [Discrete Dipole Approximation (DDA)][#10] support for NPs of arbitrary shape;
-- Expand the FMD implementation to include the thermal simulation of single NP and [plasmonic metamolecules][#11]:
+- Expand FDM implementation to include the thermal simulation of single NP and [plasmonic metamolecules][#11]:
     1. _Steady-state heat transfer_
     2. _Transient heat transfer_
     3. _Add support for different laser pulse regimes_
