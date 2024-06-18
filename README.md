@@ -6,7 +6,7 @@ The library relies on [Mie][1] and [Mie-Gans][2] theories to calculate the optic
 
 Furthermore, a collection of refractive indexes for different optical materials is included, and their permittivities are compensated following the [size dependent Drude model][4]. While the computation of nanospheres and nanoshells use Mie theory, nanorods are modeled as prolate [spheroids][5] with optical cross sections determined by [Rayleigh-Gans approximation][6] with polarizability correction using [Modified Long Wavelength Approximation (MLWA)][7].
 
-Moreover, the framework integrate optical calculations to a thermal module that uses the [Finite Difference Method (FDM)][8] to simulate [Direct Absorption Solar Collectors (DASCs)][9] and extract temperature increase, as well as the device thermodynamic performances.
+Moreover, the framework integrate optical calculations to a thermal module that uses the [Finite Difference Method (FDM)][8] to simulate [Direct Absorption Solar Collectors (DASCs)][9] and extract temperature increase, as well as the device's thermodynamic performance.
 
 Next, a set of curated tutorials are catalogued to facilitate the use of this tool.
 
