@@ -214,10 +214,10 @@ def shellCSu(wl,N1,N2,N,mu1,mu2,a,b):
 # %%
 def sphereCS(wl,N2,N,mu1,a):
     wl /= 1e9
-    Csca = npy.empty(len(wl), dtype=npy.float)
-    Cext = npy.empty(len(wl), dtype=npy.float)
-    Cbck = npy.empty(len(wl), dtype=npy.float)
-    Cabs = npy.empty(len(wl), dtype=npy.float)
+    Csca = npy.empty(len(wl), dtype=float)
+    Cext = npy.empty(len(wl), dtype=float)
+    Cbck = npy.empty(len(wl), dtype=float)
+    Cabs = npy.empty(len(wl), dtype=float)
     for index in range(0,len(wl)-1,1):
         temp = sphereCSu(wl[index]*(1e9),N2[index],N,mu1,a)
         Csca[index] = temp[0]*(1e18)
@@ -229,10 +229,10 @@ def sphereCS(wl,N2,N,mu1,a):
 # %%
 def chargedsphereCS(wl,N2,N,mu1,a):
     wl /= 1e9
-    Csca = npy.empty(len(wl), dtype=npy.float)
-    Cext = npy.empty(len(wl), dtype=npy.float)
-    Cbck = npy.empty(len(wl), dtype=npy.float)
-    Cabs = npy.empty(len(wl), dtype=npy.float)
+    Csca = npy.empty(len(wl), dtype=float)
+    Cext = npy.empty(len(wl), dtype=float)
+    Cbck = npy.empty(len(wl), dtype=float)
+    Cabs = npy.empty(len(wl), dtype=float)
     for index in range(0,len(wl)-1,1):
         temp = sphereCSu(wl[index]*(1e9),N2[index],N,mu1,a)
         Csca[index] = temp[0]*(1e18)
@@ -244,10 +244,10 @@ def chargedsphereCS(wl,N2,N,mu1,a):
 # %%
 def shellCS(wl,N1,N2,N,mu1,mu2,a,b):
     wl /= 1e9
-    Csca = npy.empty(len(wl), dtype=npy.float)
-    Cext = npy.empty(len(wl), dtype=npy.float)
-    Cbck = npy.empty(len(wl), dtype=npy.float)
-    Cabs = npy.empty(len(wl), dtype=npy.float)
+    Csca = npy.empty(len(wl), dtype=float)
+    Cext = npy.empty(len(wl), dtype=float)
+    Cbck = npy.empty(len(wl), dtype=float)
+    Cabs = npy.empty(len(wl), dtype=float)
     for index in range(0,len(wl)-1,1):
         temp = shellCSu(wl[index]*(1e9),N1[index],N2[index],N,mu1,mu2,a,b)
         Csca[index] = temp[0]*(1e18)

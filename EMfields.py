@@ -1,19 +1,11 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
+# %%
 import math
 import numpy as npy
 import RefractiveIndex as ri
 from scipy import special as sp
 import opticalCrossSection as ocs
 
-
-# In[2]:
-
-
+# %%
 def sphereEMu(wl,N2,N,r,theta,phi,a,mu1):
     # Importação dos coeficientes ópticos
     a_n, b_n, c_n, d_n = ocs.sphereCoeffs(wl,N2,N,mu1,a)
@@ -101,10 +93,7 @@ def sphereEMu(wl,N2,N,r,theta,phi,a,mu1):
     H = npy.array([H_r, H_theta, H_phi])
     return E, H
 
-
-# In[3]:
-
-
+# %%
 def shellEMu(wl,N2,N1,N,r,theta,phi,a,b,mu1,mu2):
     # Importação dos coeficientes ópticos
     a_n, b_n, c_n, d_n, f_n, g_n, v_n, w_n = ocs.shellCoeffs(wl,N1,N2,N,mu1,mu2,a,b)
@@ -236,10 +225,7 @@ def shellEMu(wl,N2,N1,N,r,theta,phi,a,b,mu1,mu2):
     H = npy.array([H_r, H_theta, H_phi])
     return E, H
 
-
-# In[4]:
-
-
+# %%
 def incidentEMu(wl,N,r,theta,phi):
     wl /= 1e9
     r /= 1e9
@@ -300,10 +286,7 @@ def incidentEMu(wl,N,r,theta,phi):
     H = npy.array([Hi_r, Hi_theta, Hi_phi])
     return E, H
 
-
-# In[ ]:
-
-
+# %%
 def yzEM(r,theta,shell_material,core_material,medium_material,a,b,wl,isShell,drude):
     
     N, N1, N2, mu1, mu2 = ri.setupRIu(shell_material,core_material,medium_material,a,b,wl,isShell,drude)
@@ -314,11 +297,11 @@ def yzEM(r,theta,shell_material,core_material,medium_material,a,b,wl,isShell,dru
     
     eps0 = 8.8541878128e-12
     
-    E_abs = npy.empty([len(r),len(theta)], dtype=npy.float)
-    H_abs = npy.empty([len(r),len(theta)], dtype=npy.float)
-    E_i = npy.empty([len(r),len(theta)], dtype=npy.float)
-    H_i = npy.empty([len(r),len(theta)], dtype=npy.float)
-    q_abs = npy.empty([len(r),len(theta)], dtype=npy.float)
+    E_abs = npy.empty([len(r),len(theta)], dtype=float)
+    H_abs = npy.empty([len(r),len(theta)], dtype=float)
+    E_i = npy.empty([len(r),len(theta)], dtype=float)
+    H_i = npy.empty([len(r),len(theta)], dtype=float)
+    q_abs = npy.empty([len(r),len(theta)], dtype=float)
     
     if isShell:
         for p in range(0,len(r)-1,1):
@@ -352,9 +335,7 @@ def yzEM(r,theta,shell_material,core_material,medium_material,a,b,wl,isShell,dru
     
     return E_abs, H_abs, q_abs
 
-
-# In[ ]:
-
+# %%
 
 
 
