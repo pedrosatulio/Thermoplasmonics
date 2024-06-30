@@ -42,7 +42,8 @@ def material_out(shell_material):
         'Cu': 'Cu_Johnson.txt',
         'W': 'W_Werner.txt',
         'Si': 'Si_Schinke.txt',
-        'PS': 'Polystyrene.txt'
+        'PS': 'Polystyrene.txt',
+        'PDA': 'Polydopamine_Qie.txt'
     }[shell_material]
 
 # %%
@@ -98,6 +99,10 @@ def setupRI(shell_material,core_material,medium_material,a,b,lambda_min,lambda_m
             wl1 = (1e-6)*npy.loadtxt('Materials/n_Polystyrene.txt', usecols=0)
             n1_np = npy.loadtxt('Materials/n_Polystyrene.txt', usecols=1)
             k1_np = 0*npy.ones(len(wl1), dtype=float)
+        elif core_material == 'PDA':
+            wl1 = (1e-6)*npy.loadtxt('Materials/n_Polydopamine_Qie.txt', usecols=0)
+            n1_np = npy.loadtxt('Materials/n_Polydopamine_Qie.txt', usecols=1)
+            k1_np = npy.loadtxt('Materials/k_Polydopamine_Qie.txt', usecols=1)
     else:
         wl1 = wl2
         n1_np = 0*npy.ones(len(wl1), dtype=float)
